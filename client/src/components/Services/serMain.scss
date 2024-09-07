@@ -1,0 +1,125 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+@import '../../../node_modules/animatewithsass/animate.scss';
+
+.ser {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin-top: 3%;
+  margin-bottom: 1%;
+
+  .fade {
+    @include fadeIn (
+      $duration: 4s,
+      $count: 1,
+      $delay: .1s,
+      $function: ease,
+      $fill: both
+    );
+  }
+
+  .serCon {
+    width: 100%;
+    display: flex;
+    padding-inline: 10%;
+    padding-bottom: 2%;
+
+    .serBx {
+      width: 100%;
+      flex-direction: column;
+      margin-inline: 6%;
+
+      img {
+        width: 100%;
+        height: 20rem;
+        object-fit: cover;
+        border: none;
+        border-radius: 20px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .serTx {
+        background-color: v.$grey;
+        color: white;
+        text-shadow: 1.5px 1.5px firebrick;
+        text-align: left;
+        margin-top: -15%;
+        width: 100%;
+        height: 12rem;
+        padding-bottom: 37%;
+        border-radius: 0px 0px 20px 20px;
+        position: relative;
+        z-index: 6;
+
+        h3 {
+          margin-left: 5%;
+          font-weight: 600;
+          line-height: 3rem;
+          @include font-size(2.1rem);
+        }
+
+        .boxDet {
+          color: red;
+          text-shadow:  none;
+          margin-left: 6%;
+          font-weight: 400;
+          @include font-size(1.2rem);
+        }
+
+        p {
+          margin-left: 2%;
+          font-weight: 300;
+          text-shadow: none;
+          line-height: 1.8rem;
+          @include font-size(1.1rem);
+
+          .bold {
+            color: v.$blue;
+            font-weight: 600;
+          }
+        }
+
+        .serButt {
+          text-shadow: none;
+          font-size: .95rem;
+          padding: 8px;
+          border-radius: 15px;
+          position: absolute;
+          right: 10%;
+          bottom: 10%;
+        }
+
+        .boxBut {
+          text-shadow: none;
+          font-size: .95rem;
+          padding: 8px;
+          border-radius: 15px;
+          position: absolute;
+          right: 4%;
+          bottom: 8%;
+        }
+
+      }
+    }
+  }
+
+    .prodQut {
+    width: 100%;
+    background-color: v.$grey;
+    color: white;
+
+    h3 {
+      padding: 1%;
+      font-weight: 300;
+      @include font-size(2rem);
+    }
+
+    .prodBut {
+      text-shadow: none;
+      font-weight: 600;
+      margin-bottom: 1%;
+    }
+  }
+}

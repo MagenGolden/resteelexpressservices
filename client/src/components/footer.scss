@@ -1,0 +1,96 @@
+@use '../variables' as v;
+@import '../../node_modules/rfs/scss';
+
+footer {
+  width: 100%;
+  display: flex;
+  background: v.$grey;
+  color: white;
+  position: absolute;
+  align-items: center;
+  padding-bottom: 2%;
+
+  .info {
+    width: 100%;
+    flex-direction: column;
+    line-height: 2rem;
+    @include font-size(1.2rem);
+
+    .botLogo {
+      width: 50%;
+      cursor: pointer;
+    }
+
+    .botPhone {
+      width: 2.5%;
+      position: absolute;
+      top: 56%;
+      left: 8%;
+
+    }
+
+    .phoneNum {
+      margin-right: 17%;
+      text-decoration: underline;
+    }
+
+    .email {
+      margin-right: 6%;
+    }
+
+    .address {
+      margin-right: 3%;
+    }
+
+  }
+
+  .links {
+    width: 100%;
+    flex-direction: column;
+    line-height: 3rem;
+    font-weight: 200;
+    @include font-size(1.5rem);
+
+    a {
+      &:hover {
+        color: red;
+      }
+    }
+  }
+
+  .quick {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 500;
+      margin-bottom: 2%;
+      @include font-size(1.5rem);
+    }
+
+    input, textarea {
+      width: 40%;
+      margin-bottom: 2%;
+      background-color: #525252;
+      border: 1px solid black;
+      @include font-size(1rem);
+
+      &::placeholder {
+        color: white;
+        font-family: bitter;
+      }
+    }
+
+    .footButt {
+      padding: 10px;
+      width: 40%;
+      text-shadow: none;
+      @include font-size(1rem);
+
+      &:hover {
+        border: 2px solid black;
+      }
+    }
+  }
+}

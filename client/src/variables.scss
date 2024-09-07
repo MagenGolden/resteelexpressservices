@@ -1,0 +1,13 @@
+$green: #61ce70;
+$grey: #292928;
+$blue: #6ec1e4;
+
+@mixin text-blur {
+  text-shadow: 2px 2px 10px black;
+}
+
+@mixin btn-div {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+}

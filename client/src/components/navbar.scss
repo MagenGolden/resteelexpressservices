@@ -1,0 +1,157 @@
+@use '../variables' as v;
+@import '../../node_modules/rfs/scss';
+
+@mixin nav {
+  flex-direction: column;
+
+  img {
+    margin: 0;
+    width: 25%;
+  }
+
+  ul {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 5% 0;
+    }
+  }
+
+  .phone {
+   right: 200%;
+  }
+}
+
+.ham {
+  display: none;
+  position: fixed;
+  background: v.$grey;
+  padding: 1% 0;
+  color: white;
+  width: 100%;
+  margin-top: 13%;
+  z-index: 8;
+}
+
+.nav, .navAct{
+  display: flex;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  background: v.$grey;
+  color: white;
+  z-index: 7;
+
+
+    img {
+      width: 15%;
+      margin-left: 3%;
+      cursor: pointer;
+    }
+
+  ul {
+    display: flex;
+    margin-right: 3%;
+    margin-bottom: 5%;
+
+    li {
+      position: relative;
+      font-family: Copperplate;
+      padding-inline: 10px;
+      @include font-size(1.5rem);
+
+      a {
+        &.active {
+          color: red;
+        }
+      }
+
+      &:hover {
+        color: red;
+      }
+
+      .products, .contact {
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        padding: 0;
+        background: v.$grey;
+        text-align: left;
+        color: white;
+        width: 100%;
+        z-index: 9;
+
+        li {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          &:hover {
+            color: red;
+            border-left: 2px solid white;
+          }
+
+        }
+
+
+      }
+    }
+
+  }
+
+  .phone {
+    position: absolute;
+    width: 10%;
+    display: flex;
+    align-items: center;
+    margin-left: 86%;
+    margin-top: 4%;
+    text-decoration: underline;
+    z-index: 8;
+
+    img {
+      width: 25%;
+      margin-left: 15%;
+      cursor: default;
+    }
+  }
+}
+
+@media (max-width: 1335px) {
+  .ham {
+    display: block;
+  }
+
+  .nav {
+    @include nav;
+
+    ul {
+      display: none;
+    }
+  }
+
+  .navAct {
+    margin: 0;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    @include nav;
+
+    ul {
+      margin-top: 5%;
+
+      li .products {
+       position: relative;
+       text-align: center;
+       display: none;
+      }
+       li .contact {
+        display: none;
+        text-align: center;
+      }
+      .arrow {
+        display: none;
+      }
+    }
+  }
+}

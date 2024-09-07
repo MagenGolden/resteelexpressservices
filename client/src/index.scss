@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+@import './node_modules/rfs/scss';
+
+
+@font-face {
+  font-family: 'Copperplate';
+  src: url('./fonts/Copperlate.otf') format('otf'),
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./fonts/Helvetica.ttf') format('ttf'),
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  margin-inline: auto;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+
+body {
+  background: #ebedeb;
+  color: black;
+  font-family: Helvetica;
+  text-align: center;
+
+}
+
+h1 {
+  font-family: Copperplate;
+}
+
+h2 {
+  font-family: Helvetica;
+}
+
+h3 {
+  font-family: bitter;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+ul li {
+  list-style-type: none;
+  cursor: pointer;
+}
+
+button {
+  display: block;
+  font-family: bitter;
+  font-weight: 700;
+  padding: 15px 15px;
+  border: none;
+  border-radius: 10px;
+  text-shadow: 2px 2px 6px black;
+  cursor: pointer;
+  @include font-size(1.4rem);
+}

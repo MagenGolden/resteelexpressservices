@@ -1,0 +1,132 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+@import '../../../node_modules/animatewithsass/animate.scss';
+
+main {
+  width: 100%;
+  position: relative;
+
+  .redLine {
+    background: firebrick;
+    width: 20%;
+    height: 5px;
+  }
+
+  .dataSheets {
+    width: 100%;
+    margin-top: 3%;
+
+    .entranceLeft {
+      @include slideInLeft(
+        $duration: 2s,
+        $count: 1,
+        $delay: .2s,
+        $function: ease,
+        $fill: both
+      );
+    }
+
+    .entranceRight {
+      @include slideInRight(
+        $duration: 2s,
+        $count: 1,
+        $delay: .2s,
+        $function: ease,
+        $fill: both
+      );
+    }
+
+    .sheets {
+      width: 100%;
+      display: flex;
+      margin-top: 3%;
+
+      a {
+        width: 100%;
+        margin-inline: 2%;
+      }
+
+      .noCur {
+        cursor: auto !important;
+
+        ul li {
+          cursor: auto;
+        }
+      }
+
+      .data {
+        width: 100%;
+        position: relative;
+        border: 2px solid black;
+        background: white;
+        cursor: pointer;
+
+        .smooth {
+          width: 100%;
+          padding: 0;
+          padding-bottom: 5%;
+        }
+
+        img {
+          object-fit: contain;
+          height: 24rem;
+          width: 100%;
+          padding: 20%;
+          position: relative;
+          z-index: 5;
+        }
+
+        .dataTxt {
+          text-align: left;
+          padding-inline: 2%;
+          width: 100%;
+          height: 38vh;
+          margin-top: -10%;
+          background: v.$grey;
+          color: white;
+          position: relative;
+          z-index: 6;
+
+          h4 {
+            font-weight: 550;
+            font-family: bitter;
+            text-shadow: 1.5px 1.5px firebrick;
+            @include font-size(1.8rem);
+          }
+
+          h5 {
+            font-family: bitter;
+            text-shadow: 1px 1px firebrick;
+            letter-spacing: 0.1rem;
+            @include font-size(1.1rem);
+          }
+
+          p {
+            font-weight: 100;
+          }
+
+
+          ul li {
+            list-style-type: disc;
+            font-weight: 300;
+          }
+
+          .databutt {
+            position: absolute;
+            text-shadow: none;
+            right: 2%;
+            bottom: 2%;
+            padding: 10px;
+            padding-left: 22px;
+            @include font-size(1rem);
+
+            .download {
+              position: absolute;
+              left: 1%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+
+.app {
+  margin-bottom: 2%;
+
+  p {
+    font-weight: 600;
+    @include font-size(1.1rem);
+  }
+  .required::after {
+    content: '*';
+    color: red;
+  }
+
+  input {
+    margin-right: 1%;
+  }
+
+  .formbut {
+    text-shadow:none;
+    background-color: v.$grey;
+    color: white;
+    padding: 10px;
+    @include font-size(1.1rem);
+  }
+}

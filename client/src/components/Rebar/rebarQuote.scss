@@ -1,0 +1,44 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+
+.getQut {
+  width: 100%;
+  display: flex;
+  background-color: v.$grey;
+  color: white;
+  align-items: center;
+  padding-inline: 20%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  @include font-size(1.5rem);
+
+  h3 {
+    font-weight: 300;
+  }
+
+  .rebBut {
+    text-shadow: none;
+    font-weight: 600;
+  }
+}
+
+.rebLink {
+  width: 100%;
+  display: flex;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-inline: 35%;
+
+  img {
+    width: 75%;
+    border: 1px solid black;
+    border-radius: 100%;
+    object-fit: cover;
+    height: 200px;
+  }
+
+  .linkTxt {
+    font-weight: 600;
+    @include font-size(1.1rem);
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../node_modules/rfs/scss';
+
+
+main {
+  padding-inline: 15%;
+  line-height: 2.5rem;
+
+  h3 {
+    margin-top: 3%;
+    font-weight: 800;
+    @include font-size(3rem);
+  }
+
+  h2 {
+    margin-top: 3%;
+    font-weight: 400;
+    @include font-size(1.3rem);
+  }
+}

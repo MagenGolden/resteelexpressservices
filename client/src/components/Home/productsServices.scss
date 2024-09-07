@@ -1,0 +1,105 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+@import '../../../node_modules/animatewithsass/animate.scss';
+
+
+.slide {
+  @include slideInLeft (
+    $duration: 2s,
+    $count: 1,
+    $delay: .2s,
+    $function: ease,
+    $fill: both
+  );
+}
+
+.prodServ {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3%;
+
+
+  img {
+    width: 50%;
+    border: none;
+    border-radius: 5%;
+    position: relative;
+    z-index: 5;
+  }
+
+  .txtbx {
+    background-color: v.$grey;
+    color: white;
+    text-shadow: 1.5px 1.5px firebrick;
+    text-align: left;
+    line-height: 2rem;
+    width: 100%;
+    height: auto;
+    margin-top: -18%;
+    border-radius: 0px 0px 20px 20px;
+    width: 50%;
+    position: relative;
+    z-index: 6;
+    @include padding-bottom(3rem);
+    & {@include font-size(1.7rem)};
+
+    h3 {
+      line-height: 3rem;
+      font-weight: 600;
+      @include margin-left(3rem);
+    }
+
+    p {
+      text-shadow: none;
+      margin-left: 3%;
+      font-weight: 300;
+      @include font-size(1.1rem);
+    }
+
+    .details {
+      color: red;
+      text-shadow: none;
+      margin-left: 6%;
+      font-weight: 400;
+      @include font-size(1.2rem);
+    }
+
+    .more {
+      position: absolute;
+      text-shadow: none;
+      font-size: .95rem;
+      padding: 8px;
+      border-radius: 15px;
+      right: 15%;
+      margin-top: -1%;
+    }
+  }
+
+}
+
+.quote {
+  width: 100%;
+  display: flex;
+  background-color: v.$grey;
+  color: white;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  margin-top: 5%;
+  @include padding(2rem);
+  & {@include font-size(1.5rem)};
+
+  .butQut {
+    text-shadow: none;
+    margin-right: 30%;
+    font-weight: 600;
+
+  }
+
+  h3 {
+    font-weight: 300;
+    margin-left: 35%;
+  }
+}

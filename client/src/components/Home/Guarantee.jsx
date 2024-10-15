@@ -1,6 +1,5 @@
 import React from 'react';
 import './guarantee.scss';
-import '../../../node_modules/hover.css/css/hover.css';
 import Building from '../../assets/aerial.jpg';
 
 const Guarantee = () => {

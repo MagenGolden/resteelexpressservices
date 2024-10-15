@@ -1,0 +1,51 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+
+.meetTeam {
+  width: 100%;
+  margin-top: 3%;
+
+  h2 {
+    font-weight: 600;
+    @include font-size(2.5rem);
+  }
+
+  .empSheets, .ownSheets {
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(325px, 1fr));
+    gap: 3% 8%;
+
+    img {
+      object-fit: cover;
+      width: 400px;
+      height: 400px;
+      border-radius: 10%;
+      box-shadow: 3px 2px 2px black;
+   }
+
+    h3 {
+      @include font-size(1.8rem);
+   }
+
+    ul li {
+      list-style-type: disc;
+      text-align: left;
+      @include font-size(1.1rem);
+   }
+ }
+
+  .shop {
+    margin-top: 200px;
+    @include font-size(1.2rem);
+    
+    img {
+      margin-top: 2%;
+      object-fit: cover;
+      width: 80%;
+      height: 600px;
+      border-radius: 30px;
+      box-shadow: 4px 4px 2px black;
+    }
+  }
+}

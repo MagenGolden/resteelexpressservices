@@ -1,0 +1,13 @@
+@import '../../../node_modules/rfs/scss';
+
+.open {
+  width: 100%;
+  display: flex;
+  margin-top: 3%;
+  font-weight: 600;
+  @include font-size(1.3rem);
+
+  li {
+    list-style-type: disc;
+  }
+}

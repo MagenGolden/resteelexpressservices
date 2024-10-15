@@ -1,6 +1,5 @@
 import React from 'react';
 import './productsServices.scss';
-import '../../../node_modules/hover.css/css/hover.css';
 import Rebar from '../../assets/rebar-pile.jpg';
 import BendMachine from '../../assets/bend-machine.jpg';
 import { useInView } from 'react-intersection-observer';

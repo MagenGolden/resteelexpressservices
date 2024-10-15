@@ -1,6 +1,5 @@
 import React from 'react';
 import './homeHeader.scss';
-import '../../../node_modules/hover.css/css/hover.css';
 import Resteel from '../../assets/homepage.jpg';
 
 const Header = () => {

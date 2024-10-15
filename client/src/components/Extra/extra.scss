@@ -1,0 +1,21 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+
+.legal {
+  text-align: left;
+  color: grey;
+
+  h3 {
+    color: v.$grey;
+    @include font-size(1.1rem);
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  a {
+    color: firebrick;
+    font-weight: 600;
+  }
+}

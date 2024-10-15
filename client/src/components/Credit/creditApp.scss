@@ -2,26 +2,72 @@
 @import '../../../node_modules/rfs/scss';
 
 .app {
+  margin-top: 1%;
   margin-bottom: 2%;
 
   p {
     font-weight: 600;
     @include font-size(1.1rem);
   }
-  .required::after {
-    content: '*';
-    color: red;
-  }
 
-  input {
-    margin-right: 1%;
-  }
+  form {
+    width: 100%;
 
-  .formbut {
-    text-shadow:none;
-    background-color: v.$grey;
-    color: white;
-    padding: 10px;
-    @include font-size(1.1rem);
+    fieldset {
+      border: none;
+    }
+
+    .break {
+      text-align: left;
+    }
+
+    .center {
+      justify-content: center;
+    }
+
+    .left {
+      margin-left: 6%;
+    }
+
+    .fields {
+      display: flex;
+      flex-wrap: wrap;
+      padding-inline: 5%;
+
+      select {
+        height: 70%;
+      }
+
+      .boxes {
+        display: flex;
+        align-items: center;
+        margin: 1%;
+
+        .required::after {
+          content: '*';
+          color: red;
+        }
+
+        input {
+          height: 70%;
+
+          &::placeholder {
+            @include font-size(.9rem);
+          }
+        }
+
+        textarea {
+          overflow-y: scroll;
+        }
+      }
+    }
+
+    .formbut {
+      text-shadow: none;
+      background-color: v.$grey;
+      color: white;
+      padding: 10px;
+      @include font-size(1.1rem);
+    }
   }
 }

@@ -2,7 +2,6 @@ import React, { useState, } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaAngleDown, FaBars, FaTimes } from 'react-icons/fa';
 import './navbar.scss';
-import '../../node_modules/hover.css/css/hover.css';
 import logo from '../assets/logo.png';
 import phone from '../assets/phone.png';
 

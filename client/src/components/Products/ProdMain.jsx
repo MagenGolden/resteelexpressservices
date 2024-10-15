@@ -1,7 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import '../Services/serMain.scss';
-import '../../../node_modules/hover.css/css/hover.css';
 import ProdRebar from '../../assets/Rebar_001.jpg'
 import ProdAcc from '../../assets/rebar-accessory.jpg'
 

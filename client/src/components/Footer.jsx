@@ -1,6 +1,5 @@
 import React from 'react';
 import './footer.scss';
-import '../../node_modules/hover.css/css/hover.css';
 import Logo from '../assets/logo.png';
 import Phone from '../assets/phone.png';
 import { useState, } from 'react';

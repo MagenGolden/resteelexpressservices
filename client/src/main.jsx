@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.scss'
+import '../node_modules/hover.css/css/hover.css';
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import Home from './routes/Home.jsx';
 import Contact from './routes/Contact.jsx';

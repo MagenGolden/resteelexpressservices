@@ -4,7 +4,7 @@
 
 main {
   width: 100%;
-  position: relative;
+  padding-bottom: 10%;
 
   .redLine {
     background: firebrick;
@@ -14,7 +14,10 @@ main {
 
   .dataSheets {
     width: 100%;
-    margin-top: 3%;
+    padding-top: 3%;
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(325px, 1fr));
+    gap: 1% 2%;
 
     .entranceLeft {
       @include slideInLeft(
@@ -30,102 +33,97 @@ main {
       @include slideInRight(
         $duration: 2s,
         $count: 1,
-        $delay: .2s,
+        $delay: .1s,
         $function: ease,
         $fill: both
       );
     }
 
-    .sheets {
+    a {
       width: 100%;
-      display: flex;
-      margin-top: 3%;
+      margin-inline: 2%;
+    }
 
-      a {
+    .noCur {
+      cursor: auto !important;
+
+      ul li {
+        cursor: auto;
+      }
+    }
+
+    .data {
+      width: 100%;
+      position: relative;
+      border: 2px solid black;
+      background: white;
+      cursor: pointer;
+
+      .smooth {
         width: 100%;
-        margin-inline: 2%;
+        padding: 0;
+        padding-bottom: 5%;
       }
 
-      .noCur {
-        cursor: auto !important;
+      img {
+        object-fit: contain;
+        height: 24rem;
+        width: 100%;
+        padding: 20%;
+        position: relative;
+        z-index: 5;
+      }
+
+      .dataTxt {
+        text-align: left;
+        padding-inline: 2%;
+        width: 100%;
+        height: 38vh;
+        margin-top: -10%;
+        background: v.$grey;
+        color: white;
+        position: relative;
+        z-index: 6;
+
+        h4 {
+          font-weight: 550;
+          font-family: bitter;
+          text-shadow: 1.5px 1.5px firebrick;
+          @include font-size(1.8rem);
+        }
+
+        h5 {
+          font-family: bitter;
+          text-shadow: 1px 1px firebrick;
+          letter-spacing: 0.1rem;
+          @include font-size(1.1rem);
+        }
+
+        p {
+          font-weight: 100;
+        }
+
 
         ul li {
-          cursor: auto;
-        }
-      }
-
-      .data {
-        width: 100%;
-        position: relative;
-        border: 2px solid black;
-        background: white;
-        cursor: pointer;
-
-        .smooth {
-          width: 100%;
-          padding: 0;
-          padding-bottom: 5%;
+          list-style-type: disc;
+          font-weight: 300;
         }
 
-        img {
-          object-fit: contain;
-          height: 24rem;
-          width: 100%;
-          padding: 20%;
-          position: relative;
-          z-index: 5;
-        }
+        .databutt {
+          position: absolute;
+          text-shadow: none;
+          right: 2%;
+          bottom: 2%;
+          padding: 10px;
+          padding-left: 22px;
+          @include font-size(1rem);
 
-        .dataTxt {
-          text-align: left;
-          padding-inline: 2%;
-          width: 100%;
-          height: 38vh;
-          margin-top: -10%;
-          background: v.$grey;
-          color: white;
-          position: relative;
-          z-index: 6;
-
-          h4 {
-            font-weight: 550;
-            font-family: bitter;
-            text-shadow: 1.5px 1.5px firebrick;
-            @include font-size(1.8rem);
-          }
-
-          h5 {
-            font-family: bitter;
-            text-shadow: 1px 1px firebrick;
-            letter-spacing: 0.1rem;
-            @include font-size(1.1rem);
-          }
-
-          p {
-            font-weight: 100;
-          }
-
-
-          ul li {
-            list-style-type: disc;
-            font-weight: 300;
-          }
-
-          .databutt {
+          .download {
             position: absolute;
-            text-shadow: none;
-            right: 2%;
-            bottom: 2%;
-            padding: 10px;
-            padding-left: 22px;
-            @include font-size(1rem);
-
-            .download {
-              position: absolute;
-              left: 1%;
-            }
+            left: 1%;
           }
         }
+
       }
     }
   }

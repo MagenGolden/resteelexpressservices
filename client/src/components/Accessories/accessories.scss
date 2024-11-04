@@ -2,9 +2,10 @@
 @import '../../../node_modules/rfs/scss';
 @import '../../../node_modules/animatewithsass/animate.scss';
 
-main {
+.access {
   width: 100%;
   padding-bottom: 10%;
+  padding-inline: 0;
 
   .redLine {
     background: firebrick;
@@ -15,9 +16,11 @@ main {
   .dataSheets {
     width: 100%;
     padding-top: 3%;
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(325px, 1fr));
-    gap: 1% 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 50px;
+
 
     .entranceLeft {
       @include slideInLeft(
@@ -40,8 +43,13 @@ main {
     }
 
     a {
-      width: 100%;
+      width: 315px;
+      height: 750px;
       margin-inline: 2%;
+
+      @media (max-width: 684px) {
+        height: auto;
+      }
     }
 
     .noCur {
@@ -78,12 +86,17 @@ main {
         text-align: left;
         padding-inline: 2%;
         width: 100%;
-        height: 38vh;
+        height: 40vh;
         margin-top: -10%;
         background: v.$grey;
         color: white;
         position: relative;
         z-index: 6;
+
+        @media (max-width: 684px) {
+          height: auto;
+          padding-bottom: 15%;
+        }
 
         h4 {
           font-weight: 550;

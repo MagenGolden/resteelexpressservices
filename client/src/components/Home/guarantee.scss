@@ -7,6 +7,10 @@
   margin-top: 1%;
   border: 10px solid v.$grey;
 
+  @media (max-width: 910px) {
+    flex-direction: column;
+  }
+
   .teamtxt {
     flex-direction: column;
     line-height: 2.5rem;
@@ -41,5 +45,9 @@
     margin: 1%;
     border: 3px solid black;
     border-radius: 20px;
+
+    @media (max-width: 910px) {
+      width: 98%;
+    }
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import JobHead from '../components/Job/JobHead.jsx';
 import Navbar from '../components/Navbar.jsx';
-import JobApp from '../components/Job/JobApp.jsx';
+import Apply from '../components/Job/Apply.jsx';
 import Footer from '../components/Footer.jsx';
 import Openings from '../components/Job/Openings.jsx';
 
@@ -17,7 +17,7 @@ const Job = () => {
       <Navbar />
       <JobHead />
       <Openings />
-      <JobApp />
+      <Apply />
       <Footer />
     </div>
   );

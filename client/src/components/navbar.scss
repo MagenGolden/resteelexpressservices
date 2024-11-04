@@ -2,11 +2,10 @@
 @import '../../node_modules/rfs/scss';
 
 @mixin nav {
-  flex-direction: column;
 
   img {
-    margin: 0;
-    width: 25%;
+    margin-top: 1%;
+    width: 140px;
   }
 
   ul {
@@ -18,49 +17,45 @@
       margin: 5% 0;
     }
   }
-
-  .phone {
-   right: 200%;
-  }
 }
 
 .ham {
   display: none;
   position: fixed;
-  background: v.$grey;
-  padding: 1% 0;
   color: white;
   width: 100%;
-  margin-top: 13%;
-  z-index: 8;
+  padding-top: 1.5%;
+  z-index: 9;
 }
 
 .nav, .navAct{
   display: flex;
   position: fixed;
   width: 100%;
+  padding-inline: 2%;
   align-items: center;
+  justify-content: space-between;
   background: v.$grey;
   color: white;
-  z-index: 7;
+  z-index: 8;
 
 
-    img {
-      width: 15%;
-      margin-left: 3%;
-      cursor: pointer;
-    }
+  img {
+    width: 15%;
+    margin: 0;
+    cursor: pointer;
+  }
 
   ul {
     display: flex;
-    margin-right: 3%;
+    margin: 0;
     margin-bottom: 5%;
 
     li {
       position: relative;
       font-family: Copperplate;
       padding-inline: 10px;
-      @include font-size(1.5rem);
+      @include font-size(1.3rem);
 
       a {
         &.active {
@@ -73,9 +68,9 @@
       }
 
       .products, .contact {
-        display: none;
         position: absolute;
         flex-direction: column;
+        margin: 0;
         padding: 0;
         background: v.$grey;
         text-align: left;
@@ -99,31 +94,15 @@
     }
 
   }
-
-  .phone {
-    position: absolute;
-    width: 10%;
-    display: flex;
-    align-items: center;
-    margin-left: 86%;
-    margin-top: 4%;
-    text-decoration: underline;
-    z-index: 8;
-
-    img {
-      width: 25%;
-      margin-left: 15%;
-      cursor: default;
-    }
-  }
 }
 
-@media (max-width: 1335px) {
+@media (max-width: 1150px) {
   .ham {
     display: block;
   }
 
   .nav {
+    height: 60px;
     @include nav;
 
     ul {
@@ -132,22 +111,24 @@
   }
 
   .navAct {
-    margin: 0;
-    padding-top: 1%;
+    padding-top: 2%;
     padding-bottom: 2%;
+    justify-content: center;
     @include nav;
+
+    @media(max-width: 600px) {
+      padding-top: 5%;
+    }
 
     ul {
       margin-top: 5%;
 
       li .products {
-       position: relative;
-       text-align: center;
-       display: none;
+        position: relative;
+        text-align: left;
       }
-       li .contact {
-        display: none;
-        text-align: center;
+      li .contact {
+        text-align: left;
       }
       .arrow {
         display: none;

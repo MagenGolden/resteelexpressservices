@@ -23,11 +23,11 @@ const [click, setClick] = useState(false);
   return (
     <>
       <div className='ham' onClick={menuClick}>
-        {click ? (<FaTimes size='30' />) : (<FaBars size='30' />) }
+        {click ? (<FaTimes size='40' />) : (<FaBars size='40' />) }
       </div>
 
       <nav className={click ? 'navAct' : 'nav'}>
-        <img onClick={logoClick} src={logo} alt="Re-Steel Express Services, Inc" />
+        <img style={{display: click ? 'none' : 'block'}} onClick={logoClick} src={logo} alt="Re-Steel Express Services, Inc" />
         <ul>
           <li className='hvr-overline-from-center'><NavLink to='/'>HOME</NavLink></li>
     <li onMouseEnter={() => setProductHidden(false)} onMouseLeave={() => setProductHidden(true)} className='hvr-overline-from-center'><NavLink to='/products'>PRODUCTS</NavLink>
@@ -46,7 +46,6 @@ const [click, setClick] = useState(false);
       </ul>
     </li><FaAngleDown className='arrow' size='20' style={{color: contactHidden ? 'white' : 'red' }} />
     </ul>
-    <div className='phone' style={{ display: contactHidden ? 'flex' : 'none' }}> <img src={phone} alt="call" /> (601) 795 6110</div>
     </nav>
     </>
   );

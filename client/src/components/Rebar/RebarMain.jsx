@@ -1,6 +1,6 @@
 import React from 'react';
 import './rebarMain.scss';
-import RebFab from '../../assets/rebarFab.jpg';
+import RebFab from '../../assets/extra.jpg';
 import Cup from '../../assets/rebar-coupler.png';
 import EngMesh from '../../assets/mesh.jpg';
 import PreCages from '../../assets/rebar-cage.jpg';

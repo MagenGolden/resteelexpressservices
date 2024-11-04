@@ -2,8 +2,9 @@ import React from 'react';
 import './footer.scss';
 import Logo from '../assets/logo.png';
 import Phone from '../assets/phone.png';
-import { useState, } from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import contactSend from './contactSend';
 
 const Footer = () => {
 
@@ -19,8 +20,10 @@ function logoClick() {
     <footer>
       <div className='info'>
        <img src={Logo} onClick={logoClick} className='botLogo' alt="Re-Steel Express Services, INC" />
+       <div className='phone'>
         <img src={Phone} className='botPhone' alt="" />
         <p className='phoneNum'>(601) 795-6110</p>
+       </div>
         <p className='email' >contat-us@resteelexpress.com</p>
         <p className='address' >9 Saw RD, Poplarville, MS 39470</p>
       </div>
@@ -32,10 +35,10 @@ function logoClick() {
       </div>
         <form className='quick'>
           <h3>Contact Us</h3>
-          <input type='text' placeholder='Name' value={name} size='10' onChange={ (e) => setName(e.target.value) } />
-          <input type='email' placeholder='Email' value={email} size='15' onChange={ (e) => setEmail(e.target.value) } />
-          <textarea placeholder='Message' value={message} rows="4" cols="15" onChange={ (e) => setMessage(e.target.value) } />
-          <button className='footButt hvr-shrink' type='submit'>Submit</button>
+          <input type='text' required placeholder='Name' value={name} size='10' onChange={ (e) => setName(e.target.value) } />
+          <input type='email' required placeholder='Email' value={email} size='15' onChange={ (e) => setEmail(e.target.value) } />
+          <textarea required placeholder='Message' value={message} rows="4" cols="15" onChange={ (e) => setMessage(e.target.value) } />
+          <button className='footButt hvr-shrink' type='button' onClick={contactSend}>Submit</button>
         </form>
     </footer>
   );

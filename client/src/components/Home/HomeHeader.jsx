@@ -9,8 +9,7 @@ const Header = () => {
       <img src={Resteel}  alt="Re-Steel Express Services, Inc" />
       <section className='imgTxt'>
         <h3>Custom Rebar Fabrication</h3>
-        <hr />
-        <h3>&emsp;&emsp;&emsp;&emsp;&emsp;Quality, Friendly Service</h3>
+        <h3 className='quality'>Quality, Friendly Service</h3>
         <br />
         <p>AMERICAN-MADE STEEL. REBAR THAT COMES WITH PEACE OF MIND.</p>
       </section>

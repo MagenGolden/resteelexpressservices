@@ -7,7 +7,7 @@
   @include slideInLeft (
     $duration: 2s,
     $count: 1,
-    $delay: .2s,
+    $delay: 0s,
     $function: ease,
     $fill: both
   );
@@ -18,11 +18,26 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-top: 3%;
 
+  @media (max-width: 910px) {
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .box {
+    width: 35%;
+    margin: 0;
+
+    @media (max-width: 1210px) {
+      width: 40%;
+    }
+
+    @media (max-width: 910px) {
+      width: 75%;
+    }
 
   img {
-    width: 50%;
+    width: 100%;
     border: none;
     border-radius: 5%;
     position: relative;
@@ -35,15 +50,15 @@
     text-shadow: 1.5px 1.5px firebrick;
     text-align: left;
     line-height: 2rem;
-    width: 100%;
     height: auto;
     margin-top: -18%;
     border-radius: 0px 0px 20px 20px;
-    width: 50%;
+    width: 100%;
     position: relative;
     z-index: 6;
     @include padding-bottom(3rem);
     & {@include font-size(1.7rem)};
+
 
     h3 {
       line-height: 3rem;
@@ -73,8 +88,9 @@
       padding: 8px;
       border-radius: 15px;
       right: 15%;
-      margin-top: -1%;
+      bottom: 2%;
     }
+  }
   }
 
 }
@@ -85,21 +101,27 @@
   background-color: v.$grey;
   color: white;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   height: auto;
   margin-top: 5%;
   @include padding(2rem);
   & {@include font-size(1.5rem)};
 
+  @media (max-width: 635px) {
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
   .butQut {
     text-shadow: none;
-    margin-right: 30%;
     font-weight: 600;
+    margin: 0;
 
   }
 
   h3 {
     font-weight: 300;
-    margin-left: 35%;
+    margin: 0;
+    margin-right: 1%;
   }
 }

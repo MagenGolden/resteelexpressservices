@@ -3,6 +3,7 @@
 
 .getQuote {
   width: 100%;
+  padding: 0;
   line-height: 1.6rem;
 
   h2 {
@@ -26,6 +27,12 @@
           margin-top: 1%;
           margin-bottom: 1%;
           @include font-size(1rem);
+        }
+
+        @media (max-width: 400px) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
       }
 
@@ -58,6 +65,10 @@
         padding: 3%;
         position: relative;
         z-index: 1;
+
+        @media (max-width: 750px) {
+          display: none;
+        }
 
         p {
           color: v.$blue;

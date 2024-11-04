@@ -8,7 +8,7 @@ const TermsHead = () => {
     <header>
       <img src={TermsImg} alt="" />
       <div className='accTxt'>
-        <div className='title'>
+        <div className='title extra'>
           <h1>Terms & Conditions &emsp;&emsp;</h1>
         </div>
       </div>

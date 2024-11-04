@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer';
 import '../Services/serMain.scss';
 import ProdRebar from '../../assets/Rebar_001.jpg'
 import ProdAcc from '../../assets/rebar-accessory.jpg'
+import useScreenSize from '../useScreenSize';
 
 
 const ProdMain = () => {
@@ -11,9 +12,12 @@ const { ref, inView } = useInView({
   triggerOnce: true,
 });
 
+  const size = useScreenSize();
+  const screenSize = size.width;
+
   return (
     <main ref={ref} className='ser'>
-      <div className={inView ? 'serCon fade' : 'serCon'}>
+      <div className={inView && screenSize > 635 ? 'serCon fade' : 'serCon'}>
         <div className='serBx'>
           <img src={ ProdRebar } alt="Rebar" />
           <div className='serTx'>

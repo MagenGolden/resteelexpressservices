@@ -10,6 +10,10 @@ footer {
   align-items: center;
   padding-bottom: 2%;
 
+  @media (max-width: 1230px) {
+    flex-direction: column;
+  }
+
   .info {
     width: 100%;
     flex-direction: column;
@@ -19,27 +23,52 @@ footer {
     .botLogo {
       width: 50%;
       cursor: pointer;
+
+      @media (max-width: 1230px) {
+        width: 25%;
+      }
     }
 
-    .botPhone {
-      width: 2.5%;
-      position: absolute;
-      top: 56%;
-      left: 8%;
+    .phone {
+      display: flex;
+      margin-left: 17%;
+      align-items: center;
+      justify-content: flex-start;
 
-    }
+      @media(max-width: 1230px) {
+        margin-left: 0;
+        justify-content: center;
+      }
 
-    .phoneNum {
-      margin-right: 17%;
-      text-decoration: underline;
+      .botPhone {
+        width: 10%;
+        margin: 0;
+
+        @media(max-width: 1230px) {
+          display: none;
+        }
+      }
+
+      .phoneNum {
+        margin: 0;
+        text-decoration: underline;
+      }
     }
 
     .email {
       margin-right: 6%;
+
+      @media(max-width: 1230px) {
+        margin-right: 0;
+      }
     }
 
     .address {
       margin-right: 3%;
+
+      @media(max-width: 1230px) {
+        margin-right: 0;
+      }
     }
 
   }

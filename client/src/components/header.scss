@@ -25,16 +25,34 @@ header {
     padding-top: 2%;
     padding-bottom: 2%;
 
+    @media (max-width: 775px) {
+      flex-direction: column;
+    }
+    .extra {
+      width: 100% !important;
+      text-align: center !important;
+    }
+
     .title {
       width: 35%;
       text-align: right;
       padding-right: 4rem;
       @include font-size(1.5rem);
+
+      @media (max-width: 775px) {
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+      }
     }
 
     .sub {
       width: 65%;
       text-align: left;
+
+      @media (max-width: 775px) {
+        text-align: center;
+      }
 
       h3 {
         font-weight: 400;
@@ -46,6 +64,10 @@ header {
        font-weight: 300;
        line-height: 1.4rem;
        @include font-size(1.1rem);
+
+        @media (max-width: 775px) {
+          display: none;
+        }
       }
     }
   }

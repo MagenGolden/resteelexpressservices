@@ -1,5 +1,4 @@
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import './accessories.scss';
 import '../../../node_modules/hover.css/css/hover.css';
 import AnchorChair from '../../assets/Anchor_Chair_001-Trans.png';
@@ -34,28 +33,12 @@ import { IoMdDownload } from 'react-icons/io';
 
 const DataSheets = () => {
 
-const { ref: Chairs, inView: chairsInView } = useInView({
-  triggerOnce: true,
-});
-const { ref: Speed, inView: speedInView } = useInView({
-  triggerOnce: true,
-});
-const { ref: Plastic, inView: plasticInView } = useInView({
-  triggerOnce: true,
-});
-const { ref: Drill, inView: drillInView } = useInView({
-  triggerOnce: true,
-});
-const { ref: Tie, inView: tieInView } = useInView({
-  triggerOnce: true,
-});
-
   return (
-    <main>
+    <main className='access'>
       <h3>Accessories</h3>
-      <div ref={Chairs} className='redLine'></div>
+      <div className='redLine'></div>
       <div className='dataSheets'>
-        <a href = { AnchorPDF } target = "_blank"><div className={ chairsInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { AnchorPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={AnchorChair} alt="" />
           <div className='dataTxt'>
             <h4>Anchor Chair</h4>
@@ -69,7 +52,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { GradePDF } target = "_blank"><div className={ chairsInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { GradePDF } target = "_blank"><div className= 'data hvr-curl-top-right'>
           <img src={GradeChair} alt="" />
           <div className='dataTxt'>
             <h4>Grade Chair w/Base</h4>
@@ -82,7 +65,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { MeshPDF } target = "_blank"><div className={ chairsInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { MeshPDF } target = "_blank"><div className='data hvr-curl-top-right' >
           <img src={MeshChair} alt="" /><div className='dataTxt'>
             <h4>Mesh Chair</h4>
             <p>secure sections of mesh that intersect, eliminating the need for tie wire.</p>
@@ -92,10 +75,10 @@ const { ref: Tie, inView: tieInView } = useInView({
               <li>Circular base provides extra stability.</li>
               <li>Provides positive lock.</li>
             </ul>
-            <button ref={Speed} className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
+            <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { SpeediesPDF } target = "_blank"><div className={ speedInView ? 'data hvr-curl-top-right entranceRight' : 'data hvr-curl-top-right' }>
+        <a href = { SpeediesPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={Speedies} alt="" />
           <div className='dataTxt'>
             <h4>Speedies</h4>
@@ -109,7 +92,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { MetalPDF } target = "_blank"><div className={ speedInView ? 'data hvr-curl-top-right entranceRight' : 'data hvr-curl-top-right' }>
+        <a href = { MetalPDF } target = "_blank"><div className='data hvr-curl-top-right' >
           <img src={MetalSlabUpper} alt="" />
           <div className='dataTxt'>
             <h4>Metal Slab Bolster Upper</h4>
@@ -121,7 +104,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { PlasticPDF } target = "_blank"><div className={ speedInView ? 'data hvr-curl-top-right entranceRight' : 'data hvr-curl-top-right' }>
+        <a href = { PlasticPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={PlasticSlab} alt="" /><div className='dataTxt'>
             <h4>Plastic Slab Bolster</h4>
             <p>contains interlocking ends for joining two or more sections together to create a continuous beam.</p>
@@ -131,10 +114,10 @@ const { ref: Tie, inView: tieInView } = useInView({
               <li>High load strength.</li>
               <li>Impact resistant.</li>
             </ul>
-            <button ref={Plastic} className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
+            <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { PlasticUpperPDF } target = "_blank"><div className={ plasticInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { PlasticUpperPDF } target = "_blank"><div className='data hvr-curl-top-right' >
           <img src={PlasticSlabUpper} alt="" />
           <div className='dataTxt'>
             <h4>Plastic Slab Bolster Upper</h4>
@@ -148,7 +131,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { StakesPDF } target = "_blank"><div className={ plasticInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { StakesPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={Stakes} alt="" />
           <div className='dataTxt'>
             <h4>Stakes</h4>
@@ -161,7 +144,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { BootPDF } target = "_blank"><div className={ plasticInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { BootPDF } target = "_blank"><div className='data hvr-curl-top-right' >
           <img src={BarBoot} alt="" /><div className='dataTxt'>
             <h4>Bar Boot</h4>
             <p>are an easy and quick way to support space rebar cage installations at the base of drilled holes or shafts.</p>
@@ -171,10 +154,10 @@ const { ref: Tie, inView: tieInView } = useInView({
               <li>Requires no tools.</li>
               <li>Ensures proper installation.</li>
             </ul>
-            <button ref={Drill} className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
+            <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { DrillPDF } target = "_blank"><div className={ drillInView ? 'data hvr-curl-top-right entranceRight' : 'data hvr-curl-top-right' }>
+        <a href = { DrillPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={DrillShaft} alt="" />
           <div className='dataTxt'>
             <h4>Drill Shaft Wheels</h4>
@@ -188,7 +171,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { EndPDF } target = "_blank"><div className={ drillInView ? 'data hvr-curl-top-right entranceRight' : 'data hvr-curl-top-right' }>
+        <a href = { EndPDF } target = "_blank"><div className='data hvr-curl-top-right'>
           <img src={EndSpacer} alt="" />
           <div className='dataTxt'>
             <h4>End Spacer</h4>
@@ -199,10 +182,10 @@ const { ref: Tie, inView: tieInView } = useInView({
               <li>No tools required.</li>
               <li>Fast installation.</li>
             </ul>
-            <button ref={Tie} className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
+            <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a><div className={ drillInView ? 'noCur data entranceRight' : 'data' }>
+        <a><div className='noCur data' >
           <img src={ConcreteBrick} alt="" /><div className='dataTxt'>
             <h4>Concrete Brick</h4>
             <p></p>
@@ -214,7 +197,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             </ul>
           </div>
         </div></a>
-        <a href = { WirePDF } target = "_blank"><div className={ tieInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { WirePDF } target = "_blank"><div className= 'data hvr-curl-top-right'>
           <img className='smooth' src={TieWire} alt="" />
           <div className='dataTxt'>
             <h4>Tie Wire</h4>
@@ -228,7 +211,7 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a href = { DowelPDF } target = "_blank"><div className={ tieInView ? 'data hvr-curl-top-right entranceLeft' : 'data hvr-curl-top-right' }>
+        <a href = { DowelPDF } target = "_blank"><div className='data hvr-curl-top-right' >
           <img className='smooth' src={SmoothDowel} alt="" />
           <div className='dataTxt'>
             <h4>Smooth Dowel</h4>
@@ -241,8 +224,8 @@ const { ref: Tie, inView: tieInView } = useInView({
             <button className='databutt hvr-shrink'><IoMdDownload className='download' size={20}/>Datasheet</button>
           </div>
         </div></a>
-        <a><div className={ tieInView ? 'noCur data entranceLeft' : 'data' }>
-          <img className='smooth' src={PolyVapor} alt="" /><div className='dataTxt'>
+        <a><div className='data noCur' >
+          <img className='smooth' src={PolyVapor} alt="" /><div className=' dataTxt'>
             <h4>Poly Vapor Barrier</h4>
             <p> </p>
             <h5>Advantages</h5>

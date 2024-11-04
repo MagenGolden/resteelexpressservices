@@ -3,7 +3,12 @@
 
 .legal {
   text-align: left;
+  padding-inline: 2%;
   color: grey;
+
+  h4 {
+    color: v.$grey;
+  }
 
   h3 {
     color: v.$grey;

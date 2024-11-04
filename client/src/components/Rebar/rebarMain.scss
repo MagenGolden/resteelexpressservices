@@ -16,10 +16,21 @@
     display: flex;
     align-items: center;
 
+    @media (max-width: 990px) {
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid v.$grey;
+      padding-bottom: 2%;
+    }
+
     img {
       width: 35%;
       height: 25rem;
       object-fit: cover;
+
+      @media (max-width: 990px) {
+        width: 100%;
+      }
     }
 
     .rebTx {

@@ -4,6 +4,7 @@
 .contact {
   width: 100%;
   margin-top: 3%;
+  padding: 0;
 
   h2 {
     margin-top: 0;
@@ -14,10 +15,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-inline: 2%;
     margin-top: 3%;
+
+    @media (max-width: 1050px) {
+      flex-direction: column;
+      row-gap: 10px;
+    }
 
     .hours {
       width: 48%;
+
+      @media(max-width: 1050px) {
+        width: 100%;
+      }
 
       h3 {
         margin-top: 3%;
@@ -40,6 +51,10 @@
       width: 48%;
       height: 500px;
       border: solid v.$grey;
+
+      @media (max-width: 1050px) {
+        width: 100%;
+      }
     }
   }
 }

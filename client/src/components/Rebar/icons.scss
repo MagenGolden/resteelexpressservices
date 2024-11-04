@@ -7,6 +7,10 @@
   justify-content: center;
   margin-top: 5%;
 
+  @media (max-width: 780px) {
+    justify-content: space-around;
+  }
+
   .iconBx {
     width: 10%;
     margin: 1%;
@@ -17,6 +21,10 @@
 
     p {
       font-weight: 600;
+
+      @media (max-width: 600px) {
+        display: none;
+      }
     }
   }
 }

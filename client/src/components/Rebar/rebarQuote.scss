@@ -4,41 +4,59 @@
 .getQut {
   width: 100%;
   display: flex;
+  justify-content: center;
+  column-gap: 10px;
   background-color: v.$grey;
   color: white;
   align-items: center;
-  padding-inline: 20%;
   padding-top: 2%;
   padding-bottom: 2%;
   @include font-size(1.5rem);
 
+  @media (max-width: 950px) {
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
   h3 {
     font-weight: 300;
+    margin: 0;
   }
 
   .rebBut {
     text-shadow: none;
     font-weight: 600;
+    margin: 0;
   }
 }
 
 .rebLink {
   width: 100%;
   display: flex;
+  justify-content: center;
+  column-gap: 30px;
   margin-top: 1%;
   margin-bottom: 1%;
-  padding-inline: 35%;
+
+  a {
+    margin: 0;
 
   img {
-    width: 75%;
+    width: 190px;
+    height: 170px;
+    object-fit: cover;
     border: 1px solid black;
     border-radius: 100%;
-    object-fit: cover;
-    height: 200px;
+
+    @media (max-width: 410px) {
+      width: 160px;
+      height: 140px;
+    }
   }
 
   .linkTxt {
     font-weight: 600;
     @include font-size(1.1rem);
+  }
   }
 }

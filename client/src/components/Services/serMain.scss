@@ -22,13 +22,25 @@
   .serCon {
     width: 100%;
     display: flex;
-    padding-inline: 10%;
+    justify-content: space-around;
     padding-bottom: 2%;
 
-    .serBx {
-      width: 100%;
+    @media (max-width: 910px) {
       flex-direction: column;
-      margin-inline: 6%;
+      row-gap: 50px;
+    }
+
+    .serBx {
+      width: 30%;
+      flex-direction: column;
+
+      @media (max-width: 1210px) {
+        width: 40%;
+      }
+
+      @media (max-width: 910px) {
+        width: 75%;
+      }
 
       img {
         width: 100%;
@@ -47,11 +59,16 @@
         text-align: left;
         margin-top: -15%;
         width: 100%;
-        height: 12rem;
+        height: 13rem;
         padding-bottom: 37%;
         border-radius: 0px 0px 20px 20px;
         position: relative;
         z-index: 6;
+
+        @media (max-width: 910px) {
+          height: auto;
+          padding-bottom: 15%;
+        }
 
         h3 {
           margin-left: 5%;
@@ -88,7 +105,7 @@
           border-radius: 15px;
           position: absolute;
           right: 10%;
-          bottom: 10%;
+          bottom: 2%;
         }
 
         .boxBut {

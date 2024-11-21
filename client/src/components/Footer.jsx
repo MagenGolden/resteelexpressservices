@@ -4,16 +4,37 @@ import Logo from '../assets/logo.png';
 import Phone from '../assets/phone.png';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import contactSend from './contactSend';
+import api from './api';
 
 const Footer = () => {
 
-const [name, setName] = useState ('');
-const [email, setEmail] = useState ('');
-const [message, setMessage] = useState ('');
+  const [name, setName] = useState ('');
+  const [email, setEmail] = useState ('');
+  const [message, setMessage] = useState ('');
 
-function logoClick() {
-  location.href = '/';
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const userInfo = {name, email, message};
+    try {
+      const response = await api.post('/contact', userInfo);
+      console.log(response);
+      if (response.statusText ==='OK') {
+        alert(
+          'Great! Your from has been sent! We will get back to you soon!'
+        );
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        alert('Opps. Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  function logoClick() {
+    location.href = '/';
 }
 
   return (
@@ -33,12 +54,12 @@ function logoClick() {
         <p><NavLink to = '/terms-and-conditions'>Terms & Conditions</NavLink></p>
         <p><NavLink to = '/privacy-policy'>Privacy Policy</NavLink></p>
       </div>
-        <form className='quick'>
+        <form className='quick' onSubmit={handleSubmit}>
           <h3>Contact Us</h3>
-          <input type='text' required placeholder='Name' value={name} size='10' onChange={ (e) => setName(e.target.value) } />
-          <input type='email' required placeholder='Email' value={email} size='15' onChange={ (e) => setEmail(e.target.value) } />
-          <textarea required placeholder='Message' value={message} rows="4" cols="15" onChange={ (e) => setMessage(e.target.value) } />
-          <button className='footButt hvr-shrink' type='button' onClick={contactSend}>Submit</button>
+          <input name='conName' type='text' required placeholder='Name' value={name} size='10' onChange={ (e) => setName(e.target.value) } />
+          <input name='conEmail' type='email' required placeholder='Email' value={email} size='15' onChange={ (e) => setEmail(e.target.value) } />
+          <textarea name='conMess' required placeholder='Message' value={message} rows="4" cols="15" onChange={ (e) => setMessage(e.target.value) } />
+          <button className='footButt hvr-shrink' type='submit'>Submit</button>
         </form>
     </footer>
   );

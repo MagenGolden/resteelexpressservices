@@ -9,8 +9,8 @@ const JobHead = () => {
     <header>
       <img src={JobImg} alt="Rebar tied in a grid" />
       <div className='accTxt'>
-        <div className='title'>
-          <h1>Job Openings &emsp;&emsp;&emsp;</h1>
+        <div className='title extra'>
+          <h1>Job Openings</h1>
         </div>
       </div>
     </header>

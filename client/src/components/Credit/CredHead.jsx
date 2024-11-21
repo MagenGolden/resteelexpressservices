@@ -8,7 +8,7 @@ const CredHead = () => {
     <header>
       <img src={CreditImg} alt="Rebar tied in a grid" />
       <div className='accTxt'>
-        <div className='title'>
+        <div className='title extra'>
           <h1>Credit Application</h1>
         </div>
       </div>

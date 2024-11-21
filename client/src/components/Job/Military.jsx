@@ -1,29 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import StateContext from './context/StateContext'
 
-const Military = ({state, handleValue}) => {
+const Military = () => {
 
-    const military = [
-    { tag: 'input', label: 'Have you ever been in the Armed Forces?', required: 'required', name: 'served', type: 'radio' },
-    { tag: 'input', label: 'Are you now a member of the National Guard?', required: 'required', name: 'guard', type: 'radio' },
-    { tag: 'input', label: 'Position Held:', type: 'text', name: 'servicePosition', value:`${state.servicePosition}`, size: '15' },
-    { tag: 'input', label: 'Date Entered:', type: 'date', name: 'serviceStart', value: `${state.serviceStart}` },
-    { tag: 'input', label: 'Date Discharged:', type: 'date', name: 'serviceEnd', value: `${state.serviceEnd}` }
-    ]
+  const { state, handleValue } = useContext(StateContext);
 
   return (
-    <fieldset className='break left'>
-      {military.map((input) => (
-        input.type === 'radio' ?
-        <div key={input.name}>
-          <label className={input.required}>{input.label}</label>
-          <label><input name={input.name} type={input.type} value='yes' onChange={handleValue} />Yes</label><label><input name={input.name} type={input.type} value='no' onChange={handleValue} />No</label>
-        </div> :
-        <div key={input.name}>
-          <label className={input.required} hmtlFor={input.name}>{input.label}</label>
-          <input id={input.name} name={input.name} required={input.required} type={input.type} value={input.value} onChange={handleValue} size={input.size} />
-        </div>
-      ))}
+    <fieldset>
+      <div className='quest zero'>
+        <label id='served' className='required'>Have you ever been in the Armed Forces?</label>
+        <div className='left'><label><input name='served' type='radio' value='yes' onChange={handleValue} />Yes</label><label><input name='served' type='radio' value='no' onChange={handleValue} />No</label></div>
+        <label id='guard' className='required'>Are you now a member of the National Guard?</label>
+        <div className='left'><label><input name='guard' type='radio' value='yes' onChange={handleValue} />Yes</label><label><input name='guard' type='radio' value='no' onChange={handleValue} />No</label></div>
+        <label>Position Held: <input className='military' name='servicePosition' type='text' value={state.servicePosition} onChange={handleValue} size='15' /></label>
+        <label>Date Entered: <input className='military' name='serviceStart' type='date' value={state.serviceStart} onChange={handleValue} /></label>
+        <label>Date Discharged: <input className='military' name='serviceEnd' type='date' value={state.serviceEnd} onChange={handleValue} /></label>
+      </div>
     </fieldset>
   );
 };

@@ -16,14 +16,14 @@ const transport = nodemailer.createTransport ({
     }
   });
 
-const contactSend = (req, res) => {
+const jobSend = (req, res) => {
 
-  let message = `<b>From:</b> ${req.body.email}<br /> <b>Name:</b> ${req.body.name}<br /> <b>Message:</b> ${req.body.message}`
+  let message = ``
 
   const mailOptions = {
     from: 'admin@resteelexpressservices.com',
     to: 'contact-us@resteelexpress.com',
-    subject: 'Contact Form',
+    subject: 'Job Application',
     html: message,
   };
 
@@ -38,4 +38,4 @@ const contactSend = (req, res) => {
   });
 };
 
-module.exports = contactSend
+module.exports = jobSend

@@ -8,8 +8,8 @@ const ContactHead = () => {
     <header>
     <img src={ContactImg} alt="" />
     <div className='accTxt'>
-      <div className='title'>
-        <h1>Get in Touch! &emsp;&emsp;</h1>
+      <div className='title extra'>
+        <h1>Get in Touch!</h1>
       </div>
     </div>
     </header>

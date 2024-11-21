@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import StateContext from './context/StateContext'
 
-const References = ({state, handleValue}) => {
+const References = () => {
+
+  const { state, handleValue } = useContext(StateContext);
 
   const references1 = [
     { label: 'Name:', name: 'refName1', type: 'text', value: `${state.refName1}`, required: 'required' },
@@ -22,17 +26,17 @@ const References = ({state, handleValue}) => {
 
   return (
     <>
-      <fieldset className='field narrow left'>
+      <fieldset>
         (1){references1.map((input) => (
-          <div key={input.name}>
+          <div className='boxes' key={input.name}>
             <label className={input.required} htmlFor={input.name}>{input.label}</label>
             <input id={input.name} name={input.name} required={input.required} type={input.type} value={input.value} size={input.size} min={input.min} max={input.max} onChange={handleValue} />
           </div>
           ))}
       </fieldset>
-    <fieldset className='field narrow left'>
+    <fieldset>
       (2){references2.map((input) => (
-        <div key={input.name}>
+        <div className='boxes' key={input.name}>
           <label className={input.required} htmlFor={input.name}>{input.label}</label>
           <input id={input.name} name={input.name} required={input.required} type={input.type} value={input.value} size={input.size} min={input.min} max={input.max} onChange={handleValue} />
         </div>

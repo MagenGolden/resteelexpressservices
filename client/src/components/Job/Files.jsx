@@ -1,10 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useState, useRef } from 'react';
+import './files.scss';
+import { useContext } from 'react';
+import FilesContext from './context/FilesContext'
 
-const Files = ({files, handleUpload, handleDrop, handleDrag, dragActive}) => {
 
-const inputRef = useRef(null);
+const Files = () => {
+
+  const { files, handleUpload, handleDrop, handleDrag, dragActive } = useContext(FilesContext);
+
+  const inputRef = useRef(null);
 
 const browse = (e) => {
   e.preventDefault();

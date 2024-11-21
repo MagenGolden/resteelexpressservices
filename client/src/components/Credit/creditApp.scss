@@ -2,72 +2,146 @@
 @import '../../../node_modules/rfs/scss';
 
 .app {
-  margin-top: 1%;
-  margin-bottom: 2%;
+  padding: 0;
+
+  .required::after {
+    content: '*';
+    color: red;
+  }
+
+  .required-highlight {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 1);
+    transform: scale(1);
+    animation: pulse 1s 3;
+    background: rgb(255, 195, 195, 0.2);
+  }
 
   p {
+    width: 90%;
     font-weight: 600;
     @include font-size(1.1rem);
   }
 
-  form {
-    width: 100%;
+  .sub {
+    text-align: left;
+  }
 
-    fieldset {
-      border: none;
-    }
+  .thin {
+    font-weight: 400;
+  }
 
-    .break {
-      text-align: left;
-    }
+  .terms {
+    flex-direction: column;
 
-    .center {
-      justify-content: center;
-    }
-
-    .left {
-      margin-left: 6%;
-    }
-
-    .fields {
-      display: flex;
-      flex-wrap: wrap;
-      padding-inline: 5%;
-
-      select {
-        height: 70%;
-      }
-
-      .boxes {
-        display: flex;
-        align-items: center;
-        margin: 1%;
-
-        .required::after {
-          content: '*';
-          color: red;
-        }
-
-        input {
-          height: 70%;
-
-          &::placeholder {
-            @include font-size(.9rem);
-          }
-        }
-
-        textarea {
-          overflow-y: scroll;
-        }
-      }
-    }
-
-    .formbut {
-      text-shadow: none;
-      background-color: v.$grey;
-      color: white;
-      padding: 10px;
-      @include font-size(1.1rem);
+    textarea {
+      margin: 0;
+      height: 12vh;
     }
   }
+
+  .zero {
+    margin: 0;
+  }
+
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+    width: 80%;
+    @include font-size(1.1rem);
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .work {
+      margin: 0;
+      text-align: left;
+
+      .wbx {
+        display: flex;
+        align-items: center;
+
+        label {
+          margin: 0;
+        }
+
+        input, select {
+          margin: 0;
+          height: 3.4%;
+          @include font-size(.9rem);
+        }
+      }
+
+      textarea {
+        width: 80%;
+        height: 15vh;
+      }
+    }
+
+    .boxes {
+      margin: 6px;
+      display: flex;
+      align-items: center;
+
+      input, select {
+        height: 65%;
+        @include font-size(.9rem);
+      }
+    }
+
+    .quest {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      .military {
+        height: 65%;
+        @include font-size(.9rem);
+      }
+
+       label, .left, input {
+         margin: 0;
+       }
+
+      input {
+        @include font-size(.9rem);
+      }
+
+      textarea {
+        width: 50%;
+        height: 15vh;
+
+        @media (max-width: 1000px) {
+          width: 90%;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 545px) {
+    .terms {
+      textarea {
+        height: 18vh;
+      }
+    }
+
+    .boxes, fieldset, .wbx {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .quest {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+}
+
+.subButt {
+  color: white;
+  background: v.$grey;
+  margin-bottom: 1%;
 }

@@ -8,8 +8,8 @@ const TeamHeader = () => {
     <header>
       <img src={TeamImg} alt="" />
       <div className='accTxt'>
-        <div className='title'>
-          <h1>Meet The Team &emsp;&emsp;</h1>
+        <div className='title extra'>
+          <h1>Meet The Team</h1>
         </div>
       </div>
     </header>

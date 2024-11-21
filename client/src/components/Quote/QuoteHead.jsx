@@ -9,8 +9,8 @@ const QuoteHead = () => {
     <header>
       <img src={QuoteImg} alt="" />
       <div className='accTxt'>
-        <div className='title'>
-          <h1>Get a Quote &emsp;&emsp;</h1>
+        <div className='title extra'>
+          <h1>Get a Quote</h1>
         </div>
       </div>
     </header>

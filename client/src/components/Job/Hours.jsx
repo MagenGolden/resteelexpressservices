@@ -1,7 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import StateContext from './context/StateContext'
 
-const Hours = ({state, handleValue}) => {
+const Hours = () => {
+
+  const { state, handleValue } = useContext(StateContext);
 
   const hours = [
     { tag: 'input', label: 'No Preference', name: 'noPerf', type: 'checkbox', checked: `${state.noPerf}` },
@@ -18,18 +22,18 @@ const Hours = ({state, handleValue}) => {
 
 
   return (
-    <fieldset className='field'>
+    <fieldset>
       {hours.map((input) => (
         input.tag === 'select' ?
-        <div key={input.name} className='left'>
+        <div key={input.name} className='boxes'>
           <label className={input.required} htmlFor={input.name}>{input.label}</label>
-          <select id={input.name} name={input.name} onChange={handleValue} value={input.value}>
-            <option value='null'>Please choose an option</option>
+          <select id={input.name} name={input.name} onChange={handleValue} value={input.value} required>
+            <option value=''>Please choose an option</option>
             <option value={input.value2}>{input.label2}</option>
             <option value={input.value3}>{input.label3}</option>
           </select>
         </div> :
-        <div key={input.name} className='left'>
+        <div key={input.name} className='boxes'>
           <label className={input.required} htmlFor={input.name}>{input.label}</label>
           <input id={input.name} name={input.name} required={input.required} type={input.type} value={input.value} onChange={handleValue} min={input.min} max={input.max} checked={input.checked}  />
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect } from 'react';
-import CreditApp from '../components/Credit/CreditApp';
+import Application from '../components/Credit/Application';
 import CredHead from '../components/Credit/CredHead';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -15,7 +15,7 @@ useEffect (() => {
     <div>
       <Navbar />
       <CredHead />
-      <CreditApp />
+      <Application />
       <Footer />
     </div>
   );

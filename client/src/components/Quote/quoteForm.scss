@@ -6,6 +6,13 @@
   padding: 0;
   line-height: 1.6rem;
 
+  .required-highlight {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 1);
+    transform: scale(1);
+    animation: pulse 1s 3;
+    background: rgb(255, 195, 195, 0.2);
+  }
+
   h2 {
     font-weight: 600;
     padding-inline: 20%;
@@ -13,94 +20,94 @@
     @include font-size(1.2rem);
   }
 
-    .quoteForm {
-      margin-top: 3%;
+  .quoteForm {
+    margin-top: 3%;
 
-      .required::after {
-        content: '*';
-        color: red;
-      }
+    .required::after {
+      content: '*';
+      color: red;
+    }
 
-      div {
-        input {
-          margin-inline: 10px;
-          margin-top: 1%;
-          margin-bottom: 1%;
-          @include font-size(1rem);
-        }
-
-        @media (max-width: 400px) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-        }
-      }
-
-      button {
+    div {
+      input {
+        margin-inline: 10px;
         margin-top: 1%;
         margin-bottom: 1%;
-        background-color: v.$grey;
-        color: white;
-        padding: 10px;
-        @include font-size(1.1rem);
+        @include font-size(1rem);
       }
 
-      #files {
+      @media (max-width: 400px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    button {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      background-color: v.$grey;
+      color: white;
+      padding: 10px;
+      @include font-size(1.1rem);
+    }
+
+    #files {
+      display: none;
+    }
+
+    .cover {
+      background-color: red;
+      margin-top: -110px;
+      width: 100%;
+      height: 110px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dragDrop {
+      width: 40%;
+      border: dashed black;
+      text-align: center;
+      padding: 3%;
+      position: relative;
+      z-index: 1;
+
+      @media (max-width: 750px) {
         display: none;
       }
 
-      .cover {
-        background-color: red;
-        margin-top: -110px;
-        width: 100%;
-        height: 110px;
-        position: relative;
-        z-index: 3;
+      p {
+        color: v.$blue;
+        text-shadow: 1px 1px 2px black;
+        cursor: default;
+        @include font-size(1.4rem);
       }
 
-      .dragDrop {
-        width: 40%;
-        border: dashed black;
-        text-align: center;
-        padding: 3%;
-        position: relative;
-        z-index: 1;
+      .upload {
+        margin-inline: auto;
+        @include font-size(1rem);
+      }
+    }
 
-        @media (max-width: 750px) {
-          display: none;
-        }
+    .dragDropActive {
+      width: 40%;
+      border: dashed grey;
+      padding: 3%;
+      position: relative;
+      z-index: 1;
 
-        p {
-          color: v.$blue;
-          text-shadow: 1px 1px 2px black;
-          cursor: default;
-          @include font-size(1.4rem);
-        }
-
-        .upload {
-          margin-inline: auto;
-          @include font-size(1rem);
-        }
+      p {
+        color: v.$blue;
+        text-shadow: 1px 1px 2px black;
+        cursor: default;
+        @include font-size(1.4rem);
       }
 
-      .dragDropActive {
-        width: 40%;
-        border: dashed grey;
-        padding: 3%;
-        position: relative;
-        z-index: 1;
-
-        p {
-          color: v.$blue;
-          text-shadow: 1px 1px 2px black;
-          cursor: default;
-          @include font-size(1.4rem);
-        }
-
-        .upload {
-          margin-inline: auto;
-          @include font-size(1rem);
-        }
+      .upload {
+        margin-inline: auto;
+        @include font-size(1rem);
       }
+    }
   }
 }

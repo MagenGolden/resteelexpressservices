@@ -12,7 +12,7 @@ const RebarHeader = () => {
         </div>
         <div className='sub'>
           <h3>100% Domestic Steel</h3>
-          <p>We carry a few different types of rebar to best suit your project.</p>
+          <p>We carry a variety of types of rebar to best suit your project.</p>
         </div>
       </div>
     </header>

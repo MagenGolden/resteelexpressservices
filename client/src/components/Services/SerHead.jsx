@@ -12,7 +12,7 @@ const SerHead = () => {
         </div>
         <div className='sub'>
           <h3>We offer a variety of services</h3>
-          <p>Are in-house team are ready to assist you during every step of your project.</p>
+          <p>Our in-house team is ready to assist you during every step of your project.</p>
         </div>
       </div>
     </header>

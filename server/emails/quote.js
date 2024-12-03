@@ -18,7 +18,7 @@ const transport = nodemailer.createTransport ({
 
 const quoteSend = (req, res) => {
 
-  let message = `<b>Name:</b> ${req.body.state.name}<br/> <b>Phone #:</b> ${req.body.state.phone}<br/> <b>Email:</b> ${req.body.state.email}<br/> <b>Company Name:</b> ${req.body.state.company}<br/> <b>Project Name:</b> ${req.body.state.project}<br/> <b>Company Address:</b> ${req.body.state.address}<br/> <b>Shipping Address:</b> ${req.body.state.shipping}<br/> <b>Interested In:</b> <b>Mesh:</b>${req.body.state.mesh} <b>Rebar:</b>${req.body.state.rebar} <b>Accessories:</b>${req.body.state.access}<br/> <b>Comments:</b> ${req.body.state.comments}<br/> <b>Files</b> ${req.body.state.files}`
+  let message = `<p style="text-align: center;"><strong>Quote</strong></p><b>Name:</b> ${req.body.state.name}<br/> <b>Phone #:</b> ${req.body.state.phone}<br/> <b>Email:</b> ${req.body.state.email}<br/> <b>Company Name:</b> ${req.body.state.company}<br/> <b>Project Name:</b> ${req.body.state.project}<br/> <b>Company Address:</b> ${req.body.state.address}<br/> <b>Shipping Address:</b> ${req.body.state.shipping}<br/> <b>Interested In:</b> <br/><b>Mesh:</b>${req.body.state.mesh} <b>Rebar:</b>${req.body.state.rebar} <b>Accessories:</b>${req.body.state.access}<br/> <b>Comments:</b> ${req.body.state.comments}<br/> <b>Files</b> ${req.body.state.files}`
 
   const mailOptions = {
     from: 'admin@resteelexpressservices.com',

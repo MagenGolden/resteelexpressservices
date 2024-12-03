@@ -12,7 +12,7 @@ import Fiona from '../../assets/fiona.jpg';
 import Shop from '../../assets/shop.jpg';
 
 const owners = [
-  { img: `${Mitch}`, name: 'Max Benefield', title: 'Owner/Operat0r', years: '40+ Years of Experience', contact: 'mitch@resteelexpress.com'},
+  { img: `${Mitch}`, name: 'Max Benefield', title: 'Owner/Operator', years: '40+ Years of Experience', contact: 'mitch@resteelexpress.com'},
   { img: `${Eric}`, name: 'Charles Eric Dann', title: 'Owner/Operator', years: '40+ Years of Experience', contact: 'eric@resteelexpress.com'},
 ];
 
@@ -83,7 +83,7 @@ const TeamMain = () => {
       <section className='shop'>
         <h2>In the Shop:</h2>
         <img className='hvr-shrink'  src={Shop} alt="" />
-        <p>Our dedicated shop team personally handle all customer orders and ensure that only the best quality products make it into your hands.</p>
+        <p>Our dedicated shop team personally handles all customer orders and ensures that only the best quality products make it into your hands.</p>
       </section>
     </main>
   );

@@ -42,6 +42,7 @@
     ul li {
       list-style-type: disc;
       text-align: left;
+      cursor: inherit;
       @include font-size(1.1rem);
    }
     }

@@ -10,7 +10,7 @@ import Work from './Work.jsx';
 import Files from './Files.jsx';
 import Questions from './Questions.jsx';
 import Terms from './Terms.jsx';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import StateContext from './context/StateContext';
 import WorkContext from './context/WorkContext';
 import FilesContext from './context/FilesContext';
@@ -101,7 +101,7 @@ const Apply = () => {
           <p className='sub thin'>Please list two references other than relatives or previous employers.</p>
           <References />
           <p className='sub'>Work Experience:</p>
-          <p className='sub thin'>Please list your work experience for the <b>past five years</b> beginning with your <b>most recent</b> job held. If you were self-employed, provide registered company name or client information who can prove work history. Attach any additional information you think might be necessary to prove employment.</p>
+          <p className='sub thin'>Please list your work experience for the <b>past five years</b>, beginning with your <b>most recent</b> job held. If you were self-employed, provide registered company name or client information who can prove work history. Attach any additional information you think might be necessary to prove employment.</p>
           <Work/>
           <Files />
           <br />

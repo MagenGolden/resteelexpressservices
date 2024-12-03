@@ -24,10 +24,6 @@ app.post('/quote', quoteSend);
 app.post('/job', jobSend);
 app.post('/credit', creditSend);
 
-app.post('/post', (req, res) => {
-  console.log(req.body)
-});
-
 app.listen(port, (res, err) => {
   if (err) {
     console.log('Server failed');

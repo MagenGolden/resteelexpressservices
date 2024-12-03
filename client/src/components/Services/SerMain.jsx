@@ -34,7 +34,7 @@ const screenSize = size.width;
           <img src={Detail} alt="Building Plans" />
           <div className='serTx'>
             <h3>Detailing</h3>
-            <p>Our in-house detailers will design a drawing packet based off of the specs provided by the client.</p>
+            <p>Our in-house detailers will design a drawing packet based on the specs provided by the client.</p>
           </div>
         </div>
       </div>

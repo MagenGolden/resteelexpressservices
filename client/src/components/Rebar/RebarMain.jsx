@@ -36,7 +36,7 @@ const RebarMain = () => {
         <img src={ Cup } alt="" />
         <div className='rebTx'>
           <h3>Couplers</h3>
-          <p>We offer couplers to make connecting rods together easier. Couplers help thread the ends of robs together and are a simple option for joining structures on-site.</p>
+          <p>We offer couplers to make connecting rods together easier. Couplers help thread the ends of robs together and are a simple option for joining structures on site.</p>
         </div>
       </div>
       <div className='rebCon'>

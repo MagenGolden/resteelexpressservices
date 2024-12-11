@@ -6,6 +6,7 @@ const contactSend = require('./emails/contact');
 const quoteSend = require('./emails/quote');
 const jobSend = require('./emails/job');
 const creditSend = require('./emails/credit');
+const projectSend = require('./emails/project');
 
 const corsOptions = {
   origin: 'http://localhost:5173',
@@ -23,6 +24,7 @@ app.post('/contact', contactSend);
 app.post('/quote', quoteSend);
 app.post('/job', jobSend);
 app.post('/credit', creditSend);
+app.post('/project', projectSend)
 
 app.listen(port, (res, err) => {
   if (err) {

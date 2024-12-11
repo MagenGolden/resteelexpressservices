@@ -8,26 +8,32 @@ import api from './api';
 
 const Footer = () => {
 
+  const[sending, setSending] = useState(false);
+
   const [name, setName] = useState ('');
   const [email, setEmail] = useState ('');
   const [message, setMessage] = useState ('');
+  const buttonText = sending ? 'Sending...' : 'Submit';
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userInfo = {name, email, message};
     try {
+      setSending(true);
       const response = await api.post('/contact', userInfo);
       console.log(response);
       if (response.statusText ==='OK') {
         alert(
           'Great! Your from has been sent! We will get back to you soon!'
         );
+        setSending(false);
         setName('');
         setEmail('');
         setMessage('');
       } else {
         alert('Opps. Something went wrong. Please try again.');
       }
+      setSending(false);
     } catch (err) {
       console.log(err);
     }
@@ -59,7 +65,7 @@ const Footer = () => {
           <input name='conName' type='text' required placeholder='Name' value={name} size='10' onChange={ (e) => setName(e.target.value) } />
           <input name='conEmail' type='email' required placeholder='Email' value={email} size='15' onChange={ (e) => setEmail(e.target.value) } />
           <textarea name='conMess' required placeholder='Message' value={message} rows="4" cols="15" onChange={ (e) => setMessage(e.target.value) } />
-          <button className='footButt hvr-shrink' type='submit'>Submit</button>
+          <button className='footButt hvr-shrink' type='submit'>{buttonText}</button>
         </form>
     </footer>
   );

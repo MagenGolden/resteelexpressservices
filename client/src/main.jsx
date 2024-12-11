@@ -15,6 +15,7 @@ import Accessories from './routes/Accessories.jsx';
 import Rebar from './routes/Rebar.jsx';
 import Credit from './routes/Credit.jsx';
 import Job from './routes/Job.jsx';
+import NewProject from './routes/NewProject.jsx';
 
 const router = createBrowserRouter([
   { path: "/", element: <Home />, },
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
   { path: "/rebar", element: <Rebar />, },
   { path: "/credit-application", element: <Credit />, },
   { path: "/job-openings", element: <Job />, },
+  { path: "/new-project", element: <NewProject />, },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

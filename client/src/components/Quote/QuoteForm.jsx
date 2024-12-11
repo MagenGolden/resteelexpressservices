@@ -5,9 +5,8 @@ import api from '../api';
 
 const QuoteForm = () => {
 
-  useEffect(() => {
-    console.log(state)
-  })
+  const[sending, setSending] = useState(false);
+  const buttonText = sending ? 'Sending...' : 'Submit';
 
 const [state, setState] = useState ({
   name: '',
@@ -91,6 +90,7 @@ const handleValue = (e) => {
     if ( emptyFields.length === 0 ) {
       const quoteInfo = {state, files};
       try {
+        setSending(true);
         const response = await api.post('/quote', quoteInfo);
         if (response.statusText === 'OK') {
           alert(
@@ -146,7 +146,7 @@ const handleValue = (e) => {
             <button className='upload' onClick={browse}>Browse Files</button>
             { dragActive && <div className='cover' onDragEnter={handleDrag} onDragOver={handleDrag} onDragLeave={handleDrag} onDrop={handleDrop} ></div> }
           </div>
-          <button type='button' onClick={handleSubmit}>Submit</button>
+          <button type='button' onClick={handleSubmit}>{buttonText}</button>
         </form>
     </main>
   );

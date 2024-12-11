@@ -2,15 +2,15 @@ const nodemailer = require('nodemailer');
 const {user, pass} = require('./logAuth');
 
 const transport = nodemailer.createTransport ({
-  host: 'smtpout.secureserver.net',
-  secure: true,
+  host: 'smtp.office365.com',
+  secure: false,
   secureConnection: false,
   tls: {
-      ciphers: 'SSLv3'
-    },
-    requireTLS: true,
-    port: 465,
-    auth: {
+    ciphers: 'SSLv3'
+  },
+  requireTLS: true,
+  port: 587,
+  auth: {
       user: user,
       pass: pass,
     }

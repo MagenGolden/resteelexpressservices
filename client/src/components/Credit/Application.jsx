@@ -1,6 +1,6 @@
 import React from 'react';
 import './creditApp.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Bank from './Bank';
 import Person from './Person';
 import Principals from './Principals';
@@ -9,6 +9,9 @@ import Agree from './Agree';
 import api from '../api';
 
 const Application = () => {
+
+  const[sending, setSending] = useState(false);
+  const buttonText = sending ? 'Sending' : 'Submit';
 
   const [state, setState] = useState ({
     name: '', date: '', email: '', phone: '', fax: '', payablePhone: '', payableEmail: '', billing: '', mailing: '', businessType: '', federalId: '', princName1: '', princTitle1: '', princPhone1: '', princEmail1: '', princMailing1: '', princName2: '', princTitle2: '', princPhone2: '', princEmail2: '', princMailing2: '', princName3: '', princTitle3: '', princPhone3: '', princEmail3: '', princMailing3: '', refName1: '', refPhone1: '', refEmail1: '', refAddress1: '', refAccount1: '', refContact1: '', refName2: '', refPhone2: '', refEmail2: '', refAddress2: '', refAccount2: '', refContact2: '', refName3: '', refPhone3: '', refEmail3: '', refAddress3: '', refAccount3: '', refContact3: '', bankName: '', bankAddress: '', bankAccount: '', bankOfficer: '', bankPhone: '', bankFax: '', terms: '',
@@ -38,6 +41,7 @@ const Application = () => {
     if ( (emptyFields.length === 0) && (emptyQuests.length === 0) ) {
       const creditInfo = state;
       try {
+        setSending(true);
         const response = await api.post('/credit', creditInfo);
         if (response.statusText === 'OK') {
           alert(
@@ -84,7 +88,7 @@ const Application = () => {
             <p className='sub'>Bank Reference:</p>
             <Bank state={state} handleValue={handleValue} />
             <Agree state={state} handleValue={handleValue} />
-            <button className='subButt' type='button' onClick={handleSubmit}>Submit</button>
+            <button className='subButt' type='button' onClick={handleSubmit}>{buttonText}</button>
           </form>
         </main>
       );

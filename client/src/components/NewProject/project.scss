@@ -1,0 +1,91 @@
+@use '../../variables' as v;
+@import '../../../node_modules/rfs/scss';
+
+.project {
+  width: 100%;
+  padding: 0;
+  margin-top: 2%;
+
+  .required-highlight {
+    box-shadow: 0 0 0 0 rgba(255, 80, 80, 1);
+    transform: scale(1);
+    animation: pulse 1s 3;
+    background: rgb(255, 195, 195, 0.2);
+  }
+
+  form {
+    margin-top: 2%;
+    width: 60%;
+
+    @media (max-width: 1050px) {
+      width: 90%;
+    }
+
+    .required::after {
+      content: '*';
+      color: red;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: flex-start;
+      margin-left: 1%;
+
+      @media (max-width: 655px) {
+        flex-direction: column;
+      }
+    }
+
+    .left {
+      text-align: left;
+      margin: 0;
+
+      @media (max-width: 655px) {
+        text-align: center;
+        margin-inline: auto;
+      }
+    }
+
+    .wrap {
+      display: flex;
+      flex-wrap: wrap;
+
+      @media (max-width: 700px) {
+        flex-direction: column;
+      }
+    }
+
+    fieldset {
+      border: none;
+      justify-content: center;
+
+      div {
+        margin: 0;
+      }
+
+      input {
+        margin-inline: 10px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        @include font-size(1rem);
+      }
+    }
+
+    button {
+      margin-top: 1%;
+      margin-bottom: 1%;
+      background-color: v.$grey;
+      color: white;
+      padding: 10px;
+      @include font-size(1.1rem);
+    }
+
+    @media (max-width: 400px) {
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+  }
+}

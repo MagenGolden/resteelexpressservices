@@ -188,12 +188,11 @@ const DataSheets = () => {
         <a><div className='noCur data' >
           <img src={ConcreteBrick} alt="" /><div className='dataTxt'>
             <h4>Concrete Brick</h4>
-            <p></p>
+            <p>used for keeping rebar and mesh off of the ground, allowing for an even pour.</p>
             <h5>Advantages</h5>
             <ul>
-              <li> </li>
-              <li> </li>
-              <li> </li>
+              <li>Can be broken into half and used for two seperate sections.</li>
+              <li>Doesn't require any extra tools for use.</li>
             </ul>
           </div>
         </div></a>
@@ -227,12 +226,11 @@ const DataSheets = () => {
         <a><div className='data noCur' >
           <img className='smooth' src={PolyVapor} alt="" /><div className=' dataTxt'>
             <h4>Poly Vapor Barrier</h4>
-            <p> </p>
+            <p>provides a barrier between the ground and concrete.</p>
             <h5>Advantages</h5>
             <ul>
-              <li> </li>
-              <li> </li>
-              <li> </li>
+              <li>Keeps moisture from raising up through concrete.</li>
+              <li>Helps keep worksite clean.</li>
             </ul>
           </div>
         </div></a>

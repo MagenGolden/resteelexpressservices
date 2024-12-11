@@ -10,6 +10,7 @@
   margin-bottom: 1%;
 
   .fade {
+    visibility: visible !important;
     @include fadeIn (
       $duration: 4s,
       $count: 1,
@@ -20,6 +21,7 @@
   }
 
   .serCon {
+    visibility: hidden;
     width: 100%;
     display: flex;
     justify-content: space-around;

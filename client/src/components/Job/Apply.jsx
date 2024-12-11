@@ -10,7 +10,7 @@ import Work from './Work.jsx';
 import Files from './Files.jsx';
 import Questions from './Questions.jsx';
 import Terms from './Terms.jsx';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import StateContext from './context/StateContext';
 import WorkContext from './context/WorkContext';
 import FilesContext from './context/FilesContext';
@@ -18,6 +18,9 @@ import EdContext from './context/EdContext';
 import api from '../api';
 
 const Apply = () => {
+
+  const[sending, setSending] = useState(false);
+  const buttonText = sending ? 'Sending...' : 'Submit';
 
   const {state} = useContext(StateContext);
   const {work} = useContext(WorkContext);
@@ -48,12 +51,13 @@ const Apply = () => {
     if ( (emptyFields.length === 0 ) && (emptyQuests.length === 0) ) {
       const jobInfo = {state, work, files, education};
       try {
+        setSending(true);
         const response = await api.post('/job', jobInfo);
         if (response.statusText === 'OK') {
           alert(
             'Great! Your application has been sent. We will get back to you as soon as possible!'
           );
-          window.location.reload();
+         window.location.reload();
         } else {
           alert('Opps. Something went wrong. Please try again later.')
         }
@@ -108,7 +112,7 @@ const Apply = () => {
           <Questions />
           <p className='sub'>Please read Application Form Waiver</p>
           <Terms />
-          <button className='subButt' type='button' onClick={handleSubmit}>Submit</button>
+          <button className='subButt' type='button' onClick={handleSubmit}>{buttonText}</button>
       </form>
     </main>
   );

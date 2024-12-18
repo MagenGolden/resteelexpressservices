@@ -17,6 +17,8 @@ const Application = () => {
     name: '', date: '', email: '', phone: '', fax: '', payablePhone: '', payableEmail: '', billing: '', mailing: '', businessType: '', federalId: '', princName1: '', princTitle1: '', princPhone1: '', princEmail1: '', princMailing1: '', princName2: '', princTitle2: '', princPhone2: '', princEmail2: '', princMailing2: '', princName3: '', princTitle3: '', princPhone3: '', princEmail3: '', princMailing3: '', refName1: '', refPhone1: '', refEmail1: '', refAddress1: '', refAccount1: '', refContact1: '', refName2: '', refPhone2: '', refEmail2: '', refAddress2: '', refAccount2: '', refContact2: '', refName3: '', refPhone3: '', refEmail3: '', refAddress3: '', refAccount3: '', refContact3: '', bankName: '', bankAddress: '', bankAccount: '', bankOfficer: '', bankPhone: '', bankFax: '', terms: '',
   });
 
+  const[b0Spm, setB0Spm] = useState('');
+
   const handleValue = (e) => {
     const value = e.target.value;
     setState({
@@ -38,12 +40,12 @@ const Application = () => {
     ];
     const emptyQuests = requiredQuests.filter( item => (!item.value) || (item.value === "false") );
 
-    if ( (emptyFields.length === 0) && (emptyQuests.length === 0) ) {
+    if ( (emptyFields.length === 0) && (emptyQuests.length === 0) &&(!b0Spm) ) {
       const creditInfo = state;
       try {
         setSending(true);
         const response = await api.post('/credit', creditInfo);
-        if (response.statusText === 'OK') {
+        if (response.data.status === 'success') {
           alert(
             'Great! Your application has been sent. We will get back to you as soon as possible!'
           );
@@ -80,6 +82,7 @@ const Application = () => {
         <main className='app'>
           <p>All clients who wish to open a line of credit with us must fill out our customer credit application. A line of credit allows clients an extra 30 days from date of invoice to pay in full.</p>
           <form onSubmit={(e) => e.preventDefault()}>
+            <input name='b0Spm' value={b0Spm} onChange={ (e) => setB0Spm(e.target.value) } type='text' placeholder='title' style={{display: 'none'}} />
             <Person state={state} handleValue={handleValue} />
             <p className='sub'>Principals:</p>
             <Principals state={state} handleValue={handleValue} />

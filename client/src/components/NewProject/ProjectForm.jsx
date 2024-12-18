@@ -26,6 +26,7 @@ const ProjectForm = () => {
     date: '',
     deliver: '',
     certs: '',
+    b0Spm: '',
   });
 
   const handleValue = (e) => {
@@ -48,12 +49,12 @@ const ProjectForm = () => {
     ];
     const emptyQuests = requiredQuests.filter( item => !item.value );
 
-    if ( (emptyFields.length === 0) && (emptyQuests.length === 0) ) {
+    if ( (emptyFields.length === 0) && (emptyQuests.length === 0) && (!state.b0Spm) ) {
       const projectInfo = state;
       try {
         setSending(true);
         const response = await api.post('/project', projectInfo);
-        if (response.statusText === 'OK') {
+        if (response.data.status === 'success') {
           alert(
             'Great! Your application has been sent. We will get back to you as soon as possible!'
           );
@@ -92,6 +93,7 @@ const ProjectForm = () => {
       <strong>Fill out the below form to start a New Project with us.</strong>
       <form onSubmit={(e) => e.preventDefault()}>
         <fieldset className='wrap'>
+          <input name='b0Spm' type='text' value={state.boSpm} onChange={handleValue} placeholder='title' style={{display: 'none'}} />
           <div>
             <label className='required' htmlFor="contractor">Contractor:</label>
             <input name='contractor' id='contractor' type='text' value={state.contractor} onChange={handleValue} required/>

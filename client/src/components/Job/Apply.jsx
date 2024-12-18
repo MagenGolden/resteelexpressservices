@@ -26,6 +26,7 @@ const Apply = () => {
   const {work} = useContext(WorkContext);
   const {files} = useContext(FilesContext);
   const {education} = useContext(EdContext);
+  const [b0Spm, setB0Spm] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,12 +49,12 @@ const Apply = () => {
     ];
     const emptyQuests = requiredQuests.filter( item => (!item.value) || (item.value === "false") );
 
-    if ( (emptyFields.length === 0 ) && (emptyQuests.length === 0) ) {
+    if ( (emptyFields.length === 0 ) && (emptyQuests.length === 0) && (!b0Spm) ) {
       const jobInfo = {state, work, files, education};
       try {
         setSending(true);
         const response = await api.post('/job', jobInfo);
-        if (response.statusText === 'OK') {
+        if (response.data.status === 'success') {
           alert(
             'Great! Your application has been sent. We will get back to you as soon as possible!'
           );
@@ -92,6 +93,7 @@ const Apply = () => {
       <br />
       <p>(if no position is currently open, applications wil be put on file until a position is available)</p>
       <form onSubmit={(e) => e.preventDefault()}>
+        <input name='b0Spm' type='text' value={b0Spm} onChange={ (e) => setB0Spm(e.target.value) } placeholder='title' style={{display: 'none'}} />
         <Personal/>
         <p className='sub'>Days/Hours Available to work:</p>
         <Hours />

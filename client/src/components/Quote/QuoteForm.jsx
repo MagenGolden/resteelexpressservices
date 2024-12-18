@@ -9,6 +9,7 @@ const QuoteForm = () => {
   const buttonText = sending ? 'Sending...' : 'Submit';
 
 const [state, setState] = useState ({
+  b0Spm: '',
   name: '',
   phone: '',
   email: '',
@@ -87,12 +88,12 @@ const handleValue = (e) => {
       (!item.value && item.required && item.id)
     );
 
-    if ( emptyFields.length === 0 ) {
+    if ( (emptyFields.length === 0) && (!state.b0Spm) ) {
       const quoteInfo = {state, files};
       try {
         setSending(true);
         const response = await api.post('/quote', quoteInfo);
-        if (response.statusText === 'OK') {
+        if (response.data.status === 'success') {
           alert(
             'Great! Your application has been sent. We will get back to you as soon as possible!'
           );
@@ -121,6 +122,7 @@ const handleValue = (e) => {
       <p>Office Phone #: 601-795-6110</p>
       <p>Email: sales@resteelexpress.com</p>
         <form className='quoteForm' onSubmit={(e) => e.preventDefault()}>
+          <input name='b0Spm' type='text' value={state.b0Spm} onChange={handleValue} placeholder='title' style={{display: 'none'}}/>
           {quote.map((input) => (
             input.tag === 'textarea' ?
             <div key={input.name}>

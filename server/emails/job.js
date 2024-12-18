@@ -1,5 +1,12 @@
 const nodemailer = require('nodemailer');
 const {user, pass} = require('./logAuth');
+const logEvents = require('../logEvents');
+const EventEmitter = require('events');
+
+class MyEmitter extends EventEmitter {};
+const myEmitter = new MyEmitter();
+
+myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
 
 const transport = nodemailer.createTransport ({
   host: 'smtp.office365.com',
@@ -121,7 +128,7 @@ ${work.map(work =>
 
   transport.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      myEmitter.emit('log',`${error.name}: ${error.message}`, 'errLog.txt');
       res.send(error);
     } else {
       console.log('Email sent');

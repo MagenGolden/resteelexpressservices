@@ -38,7 +38,7 @@ const ContactMain = () => {
           </div>
         </div>
         <div className='map'>
-          <APIProvider apiKey={ 'AIzaSyC49LOvDdGfw48M--VKllR0R32NT7jpwkY' } onLoad={() => console.log( 'Maps API has loaded' )}>
+          <APIProvider apiKey={ '***************' } onLoad={() => console.log( 'Maps API has loaded' )}>
             <Map defaultZoom={16} defaultCenter={{lat: 30.838910, lng: -89.516430}}>
               <Marker position={{lat: 30.838910, lng: -89.516430}} />
             </Map>

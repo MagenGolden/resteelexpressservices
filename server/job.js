@@ -1,5 +1,4 @@
 const nodemailer = require('nodemailer');
-const {user, pass} = require('./logAuth');
 const logEvents = require('../logEvents');
 const EventEmitter = require('events');
 
@@ -18,8 +17,8 @@ const transport = nodemailer.createTransport ({
   requireTLS: true,
   port: 587,
   auth: {
-      user: user,
-      pass: pass,
+      user: process.env.ADMIN,
+      pass: process.env.PASS,
     }
   });
 
